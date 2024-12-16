@@ -117,55 +117,39 @@ class Trie:
 
 
     def remove_word(self, word:str) -> bool:
-        
         if not self.head or not word:
             return False
-    
-        def traverse(i, node):
-            let = word[i]
-            #print("letter:", let, i)
 
-            # word can't be in tree
-            if let not in node.children: return False
+        def traverse_and_cleanup(i, node):
 
-            next_node = node.children[let]
-            
-            # check end of the word we are trying to remove
-            if i == len(word)-1:
-                if next_node.end_of_word: 
-                    # remove the word
-                    next_node.end_of_word = False 
+            if i == len(word):
+                # end of word reached, check if exists 
+                if node.end_of_word:
+                    node.end_of_word = False # remove word
                     self.word_count -= 1
-
-                    # if there is still a word stored within this subtree, we're done
-                    if self.contains_any_word(next_node):
-                        return True
-                    
-                    # otherwise, no words need this tree
-                    else:
-                        # traverse up the parents to remove as many letters as possible
-                        while next_node and next_node.parent:
-
-                            # if this node is not the end of a word, or used for a longer word
-                            if not (self.contains_any_word(next_node) or next_node.end_of_word):
-                                # sever this node
-                                next_node.parent.remove_child(next_node.value)
-                                
-                                # how big is the subtree we are severing?
-                                self.letter_count -= self.count_nodes(next_node)
-
-                                next_node = next_node.parent
-                            else: break
-                        
-                        # success
-                        return True
                 else:
-                    # word did not exist, failed removal
-                    return False
+                    return False # word does not exist
                 
-            return traverse(i+1, next_node)
-        
-        return traverse(0, self.head)
+                # if no children (this was the longest word),
+                # see if we can shorten this branch of the trie
+                if not node.children:
+                    while node.parent and not node.children and not node.end_of_word:
+                        # sever node
+                        del node.parent.children[node.value]
+                        self.letter_count -= 1
+                        node = node.parent
+                return True
+            
+            # not at end of word, try and traverse
+            let = word[i]
+            if let not in node.children:
+                return False # word does not exist
+            
+            next_node = node.children[let]
+            return traverse_and_cleanup(i+1, next_node)
+
+        return traverse_and_cleanup(0, self.head)
+            
 
     # visualize that thang
     def print_tree(self, level=0) -> None:

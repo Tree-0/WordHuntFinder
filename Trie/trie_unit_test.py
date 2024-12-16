@@ -89,6 +89,8 @@ def test_remove_from_empty():
     trie.print_tree()
     
     assert trie.remove_word('apple')
+    assert not trie.contains_word('apple')
+    assert not trie.contains_any_word()
     assert trie.word_count == 0
     assert trie.letter_count == 0
     trie.print_tree()
