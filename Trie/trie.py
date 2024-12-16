@@ -1,4 +1,6 @@
 from node import Node
+import pickle
+import json
 
 class Trie:
     
@@ -7,6 +9,7 @@ class Trie:
         self.letter_count = 0
         self.word_count = 0
     
+
     def add_word(self, word:str) -> bool:
         '''
             Add the given word to the trie. True if successful,
@@ -95,6 +98,7 @@ class Trie:
 
         return traverse(node)
 
+
     def count_nodes(self, node=None) -> int:
         '''
             count the number of nodes in a subtree.
@@ -151,7 +155,6 @@ class Trie:
         return traverse_and_cleanup(0, self.head)
             
 
-    # visualize that thang
     def print_tree(self, level=0) -> None:
         def traverse(node, level):
             if node.end_of_word:
@@ -163,12 +166,45 @@ class Trie:
 
         traverse(self.head, level)
     
-    # idk I just wanted to be able to call it by both names
+    # just so I can call print_tree with either name
     def print_trie(self, level=0) -> None:
         self.print_tree(self, level)
 
 
-    def clear(self):
+    def clear(self) -> None:
         self.head = Node()
         self.letter_count = 0
         self.word_count = 0
+
+
+    def serialize_to_file(self, filepath, format='pickle'):
+        if format == 'pickle':
+            with open(filepath, 'wb') as f:
+                pickle.dump(self.head, f)
+        elif format == 'json':
+            with open(filepath, 'w') as f:
+                json.dump(self._to_dict(self.head), f)
+        else:
+            raise ValueError("Unsupported format. Use 'pickle' or 'json'.")
+
+    def deserialize_from_file(self, filepath, format='pickle'):
+        if format == 'pickle':
+            with open(filepath, 'rb') as f:
+                self.head = pickle.load(f)
+        elif format == 'json':
+            with open(filepath, 'r') as f:
+                self.head = self._from_dict(json.load(f))
+        else:
+            raise ValueError("Unsupported format. Use 'pickle' or 'json'.")    
+        
+    def _to_dict(self, node):
+        return {
+            'value': node.value,
+            'end_of_word': node.end_of_word,
+            'children': {k: self._to_dict(v) for k, v in node.children.items()},
+        }
+
+    def _from_dict(self, data):
+        node = Node(data['value'], data['end_of_word'])
+        node.children = {k: self._from_dict(v) for k, v in data['children'].items()}
+        return node
