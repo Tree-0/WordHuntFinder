@@ -78,8 +78,6 @@ def test_contains_any_words():
     assert trie.contains_any_word()
 
 ## Test Remove
-def test_remove_word():
-    pass
 
 def test_remove_from_empty():
     trie = Trie()
@@ -94,9 +92,7 @@ def test_remove_from_empty():
     assert trie.word_count == 0
     assert trie.letter_count == 0
     trie.print_tree()
-
-    pass
-
+    
 def test_remove_nonexistent_word():
     """Test removing a word that doesn't exist in the trie."""
     trie = Trie()
