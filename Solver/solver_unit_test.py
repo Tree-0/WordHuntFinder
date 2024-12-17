@@ -56,7 +56,6 @@ def test_word_hunt_small_board():
     assert len(found_words) > 0
     print(f'{len(found_words)} words found.')
 
-
 def test_word_hunt_medium_board():
     solver = Solver('neseyxtrtebaiddn', 'wordhunt', 4)
 
@@ -74,6 +73,30 @@ def test_word_hunt_medium_board():
     with open('output_medium.txt', 'w') as file:
         with redirect_stdout(file):
             found_words = solver.solve_word_hunt(valid_words)
+
+    then = time.time()
+
+    print(f'solving board took {int(then-now)} seconds.')
+
+    assert found_words.pop()
+    assert len(found_words) > 0
+    print(f'{len(found_words)} words found.')
+
+def test_word_hunt_large_board():
+    large_solver = Solver('crxteeabdsetnaydrbwtstbud', 'wordhunt', 5)
+    
+    now = time.time()
+
+    valid_words = Trie()
+    valid_words.deserialize_from_file('trie_data.pickle', format='pickle')
+
+    then = time.time()
+    print(f'deserialization took {int(then-now)} seconds.')
+    now = time.time()
+
+    with open('output_large.txt', 'w') as file:
+        with redirect_stdout(file):
+            found_words = large_solver.solve_word_hunt(valid_words)
 
     then = time.time()
 
