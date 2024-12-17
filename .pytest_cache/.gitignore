@@ -1,0 +1,13 @@
+# Ignore all __pycache__ directories
+__pycache__/
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore logs or output files
+# output_*.txt
