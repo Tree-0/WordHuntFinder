@@ -1,4 +1,4 @@
-from node import Node
+from Trie.node import Node
 import pickle
 import json
 
@@ -54,21 +54,25 @@ class Trie:
             Check if the trie contains the given word.
         '''
         if not self.head or not word:
+            print('invalid contains_word call!')
             return False
 
         # go through trie
         def traverse(i, node):
             let = word[i]
-            #print("letter:", let, i)
-
+            # print("letter:", let, i)
+            # print(node)
             # if letter not in trie, return false
-            if let not in node.children: return False
+            if let not in node.children: 
+                # print('letter not in children')
+                return False
             
             # next letter exists
             next_node = node.children[let]
 
             # if end of word is reached, check end_of_word
             if i == len(word)-1:
+                # print('end of word reached, checking if it is a word')
                 return next_node.end_of_word
 
             # traverse to next letter node
@@ -97,6 +101,16 @@ class Trie:
             return False
 
         return traverse(node)
+
+
+    def contains_prefix(self, prefix: str) -> bool:
+        ''' Check if any words in the trie start with the given prefix. '''
+        node = self.head
+        for char in prefix:
+            if char not in node.children:
+                return False
+            node = node.children[char]
+        return True
 
 
     def count_nodes(self, node=None) -> int:
@@ -178,31 +192,44 @@ class Trie:
 
 
     def serialize_to_file(self, filepath, format='pickle'):
+        trie_data = {
+            'head': self._to_dict(self.head),
+            'word_count': self.word_count,
+            'letter_count': self.letter_count
+        }
+
         if format == 'pickle':
             with open(filepath, 'wb') as f:
-                pickle.dump(self.head, f)
+                pickle.dump(trie_data, f)
         elif format == 'json':
             with open(filepath, 'w') as f:
-                json.dump(self._to_dict(self.head), f)
+                json.dump(trie_data, f)
         else:
             raise ValueError("Unsupported format. Use 'pickle' or 'json'.")
+
 
     def deserialize_from_file(self, filepath, format='pickle'):
         if format == 'pickle':
             with open(filepath, 'rb') as f:
-                self.head = pickle.load(f)
+                trie_data = pickle.load(f)
         elif format == 'json':
             with open(filepath, 'r') as f:
-                self.head = self._from_dict(json.load(f))
+                trie_data = json.load(f)
         else:
             raise ValueError("Unsupported format. Use 'pickle' or 'json'.")    
         
+        self.head = self._from_dict(trie_data['head'])
+        self.word_count = trie_data['word_count']
+        self.letter_count = trie_data['letter_count']
+
+
     def _to_dict(self, node):
         return {
             'value': node.value,
             'end_of_word': node.end_of_word,
             'children': {k: self._to_dict(v) for k, v in node.children.items()},
         }
+
 
     def _from_dict(self, data):
         node = Node(data['value'], data['end_of_word'])

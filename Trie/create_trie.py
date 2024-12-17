@@ -5,7 +5,8 @@ and serialize it for future use.
 Post: ~1 second to read file, ~8 seconds to serialize both methods
 '''
  
-from trie import Trie
+from .trie import Trie
+from .node import Node
 import time
 
 all_words = Trie()

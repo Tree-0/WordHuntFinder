@@ -77,8 +77,22 @@ def test_contains_any_words():
     assert trie.contains_word('app')
     assert trie.contains_any_word()
 
-## Test Remove
+def test_contains_prefix():
+    trie = Trie()
+    trie.add_word("cat")
+    trie.add_word("cater")
+    trie.add_word("caterpillar")
 
+    assert trie.contains_prefix("c") == True
+    assert trie.contains_prefix("ca") == True
+    assert trie.contains_prefix("cat") == True
+    assert trie.contains_prefix("cate") == True
+    assert trie.contains_prefix("cater") == True
+    assert trie.contains_prefix("caterp") == True
+    assert trie.contains_prefix("dog") == False
+    assert trie.contains_prefix("cap") == False
+
+## Test Remove
 def test_remove_from_empty():
     trie = Trie()
 
