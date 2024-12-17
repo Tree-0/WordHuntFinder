@@ -1,4 +1,4 @@
-starting from letter:  C
+(0,0) - starting from letter:  C
 valid word: CEE
 valid word: CERATE
 valid word: CERATED
@@ -41,7 +41,7 @@ valid word: CANTER
 valid word: CANTERS
 valid word: CANTER
 valid word: CANDY
-starting from letter:  R
+(0,1) - starting from letter:  R
 valid word: RAT
 valid word: RATE
 valid word: RATED
@@ -74,17 +74,17 @@ valid word: REAN
 valid word: RET
 valid word: RETAX
 valid word: RETE
-starting from letter:  X
-starting from letter:  T
+(0,2) - starting from letter:  X
+(0,3) - starting from letter:  T
 valid word: TES
 valid word: TED
 valid word: TEDS
 valid word: TEDY
 valid word: TSADE
-starting from letter:  E
+(0,4) - starting from letter:  E
 valid word: EST
 valid word: EDS
-starting from letter:  E
+(1,0) - starting from letter:  E
 valid word: EAT
 valid word: EATER
 valid word: EATERS
@@ -95,7 +95,7 @@ valid word: ETA
 valid word: ETNA
 valid word: ETNAS
 valid word: ETNA
-starting from letter:  A
+(1,1) - starting from letter:  A
 valid word: ATE
 valid word: ATE
 valid word: ARC
@@ -125,7 +125,7 @@ valid word: ANTE
 valid word: ANTEED
 valid word: AND
 valid word: ANDS
-starting from letter:  B
+(1,2) - starting from letter:  B
 valid word: BAT
 valid word: BATE
 valid word: BATED
@@ -188,7 +188,7 @@ valid word: BAST
 valid word: BASTE
 valid word: BASTED
 valid word: BAT
-starting from letter:  D
+(1,3) - starting from letter:  D
 valid word: DAW
 valid word: DAWT
 valid word: DAWN
@@ -201,7 +201,7 @@ valid word: DANTED
 valid word: DAB
 valid word: DAB
 valid word: DAS
-starting from letter:  S
+(1,4) - starting from letter:  S
 valid word: SET
 valid word: SED
 valid word: SEDAN
@@ -224,7 +224,7 @@ valid word: SAB
 valid word: SABRE
 valid word: SABRED
 valid word: SAT
-starting from letter:  E
+(2,0) - starting from letter:  E
 valid word: EDS
 valid word: ETA
 valid word: ETNA
@@ -237,7 +237,7 @@ valid word: EAN
 valid word: ERS
 valid word: ERST
 valid word: ERN
-starting from letter:  T
+(2,1) - starting from letter:  T
 valid word: TREE
 valid word: TAR
 valid word: TARE
@@ -266,7 +266,7 @@ valid word: TEC
 valid word: TEA
 valid word: TEAR
 valid word: TEAED
-starting from letter:  N
+(2,2) - starting from letter:  N
 valid word: NAW
 valid word: NADS
 valid word: NAY
@@ -282,7 +282,7 @@ valid word: NAB
 valid word: NAE
 valid word: NACRE
 valid word: NAE
-starting from letter:  A
+(2,3) - starting from letter:  A
 valid word: AWN
 valid word: ADS
 valid word: ADNATE
@@ -313,14 +313,14 @@ valid word: ABAND
 valid word: ABANDS
 valid word: ABB
 valid word: ABUT
-starting from letter:  Y
+(2,4) - starting from letter:  Y
 valid word: YAW
 valid word: YAWN
 valid word: YAD
 valid word: YADS
 valid word: YABA
 valid word: YAS
-starting from letter:  D
+(3,0) - starting from letter:  D
 valid word: DEE
 valid word: DEER
 valid word: DEET
@@ -333,7 +333,7 @@ valid word: DREE
 valid word: DREER
 valid word: DREAR
 valid word: DREARE
-starting from letter:  R
+(3,1) - starting from letter:  R
 valid word: RED
 valid word: REDS
 valid word: REE
@@ -344,7 +344,7 @@ valid word: RETEAR
 valid word: REATE
 valid word: REAR
 valid word: REAN
-starting from letter:  B
+(3,2) - starting from letter:  B
 valid word: BWANA
 valid word: BRED
 valid word: BREDS
@@ -380,7 +380,7 @@ valid word: BAT
 valid word: BUD
 valid word: BUB
 valid word: BUT
-starting from letter:  W
+(3,3) - starting from letter:  W
 valid word: WUD
 valid word: WAD
 valid word: WADT
@@ -408,7 +408,7 @@ valid word: WAST
 valid word: WASTE
 valid word: WASTED
 valid word: WAT
-starting from letter:  T
+(3,4) - starting from letter:  T
 valid word: TYDE
 valid word: TWA
 valid word: TWAY
@@ -436,14 +436,14 @@ valid word: TUB
 valid word: TUB
 valid word: TUBA
 valid word: TUBAS
-starting from letter:  S
+(4,0) - starting from letter:  S
 valid word: STREET
-starting from letter:  T
+(4,1) - starting from letter:  T
 valid word: TREE
 valid word: TRET
 valid word: TREAT
 valid word: TREATER
-starting from letter:  B
+(4,2) - starting from letter:  B
 valid word: BUD
 valid word: BUB
 valid word: BUBA
@@ -455,10 +455,10 @@ valid word: BREE
 valid word: BREER
 valid word: BREARE
 valid word: BWANA
-starting from letter:  U
+(4,3) - starting from letter:  U
 valid word: UTA
 valid word: UTAS
-starting from letter:  D
+(4,4) - starting from letter:  D
 valid word: DUB
 valid word: DUB
 valid word: DUTY

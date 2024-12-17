@@ -1,4 +1,4 @@
-starting from letter:  N
+(0,0) - starting from letter:  N
 valid word: NYE
 valid word: NYES
 valid word: NYE
@@ -16,7 +16,7 @@ valid word: NETS
 valid word: NETE
 valid word: NETE
 valid word: NETES
-starting from letter:  E
+(0,1) - starting from letter:  E
 valid word: EXED
 valid word: EXED
 valid word: EXTRA
@@ -32,7 +32,7 @@ valid word: EYEBAR
 valid word: EYEBARS
 valid word: EYED
 valid word: ETA
-starting from letter:  S
+(0,2) - starting from letter:  S
 valid word: STRAND
 valid word: STRANDED
 valid word: STRAD
@@ -70,7 +70,7 @@ valid word: SEN
 valid word: SEY
 valid word: SET
 valid word: SETA
-starting from letter:  E
+(0,3) - starting from letter:  E
 valid word: ERA
 valid word: ERS
 valid word: ERST
@@ -78,7 +78,7 @@ valid word: EST
 valid word: ESTRADE
 valid word: ETEN
 valid word: ETA
-starting from letter:  Y
+(1,0) - starting from letter:  Y
 valid word: YEX
 valid word: YEXED
 valid word: YEXED
@@ -92,10 +92,10 @@ valid word: YEXES
 valid word: YET
 valid word: YETI
 valid word: YET
-starting from letter:  X
+(1,1) - starting from letter:  X
 valid word: XED
 valid word: XED
-starting from letter:  T
+(1,2) - starting from letter:  T
 valid word: TRAD
 valid word: TRADE
 valid word: TRADED
@@ -122,7 +122,7 @@ valid word: TARS
 valid word: TAB
 valid word: TAD
 valid word: TADDIE
-starting from letter:  R
+(1,3) - starting from letter:  R
 valid word: RAN
 valid word: RAND
 valid word: RANDED
@@ -146,7 +146,7 @@ valid word: RET
 valid word: RETS
 valid word: RETE
 valid word: RETE
-starting from letter:  T
+(2,0) - starting from letter:  T
 valid word: TID
 valid word: TIDE
 valid word: TIDED
@@ -176,7 +176,7 @@ valid word: TETES
 valid word: TETE
 valid word: TETES
 valid word: TED
-starting from letter:  E
+(2,1) - starting from letter:  E
 valid word: EDIT
 valid word: EXES
 valid word: EXTRA
@@ -187,7 +187,7 @@ valid word: EYES
 valid word: EYEN
 valid word: ETEN
 valid word: ETA
-starting from letter:  B
+(2,2) - starting from letter:  B
 valid word: BAN
 valid word: BAND
 valid word: BANDED
@@ -227,7 +227,7 @@ valid word: BRANDED
 valid word: BRAT
 valid word: BRATS
 valid word: BRAD
-starting from letter:  A
+(2,3) - starting from letter:  A
 valid word: AND
 valid word: ARE
 valid word: ARES
@@ -255,9 +255,9 @@ valid word: ATE
 valid word: ATE
 valid word: ATES
 valid word: ADD
-starting from letter:  I
+(3,0) - starting from letter:  I
 valid word: IDE
-starting from letter:  D
+(3,1) - starting from letter:  D
 valid word: DEX
 valid word: DEXES
 valid word: DEXTRAN
@@ -291,7 +291,7 @@ valid word: DIETS
 valid word: DIETER
 valid word: DIETERS
 valid word: DIED
-starting from letter:  D
+(3,2) - starting from letter:  D
 valid word: DEX
 valid word: DEXES
 valid word: DEXTRAN
@@ -331,7 +331,7 @@ valid word: DATE
 valid word: DATER
 valid word: DATERS
 valid word: DATES
-starting from letter:  N
+(3,3) - starting from letter:  N
 valid word: NARE
 valid word: NARES
 valid word: NAB

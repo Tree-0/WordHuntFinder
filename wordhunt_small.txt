@@ -1,4 +1,4 @@
-starting from letter:  C
+(0,0) - starting from letter:  C
 valid word: CEP
 valid word: CEPS
 valid word: CESTA
@@ -14,7 +14,7 @@ valid word: CAPAS
 valid word: CAT
 valid word: CAT
 valid word: CATS
-starting from letter:  A
+(0,1) - starting from letter:  A
 valid word: APSE
 valid word: APT
 valid word: APTS
@@ -35,7 +35,7 @@ valid word: ATAP
 valid word: ATAPS
 valid word: ATT
 valid word: ATS
-starting from letter:  T
+(0,2) - starting from letter:  T
 valid word: TAP
 valid word: TAPS
 valid word: TAPE
@@ -50,14 +50,14 @@ valid word: TAE
 valid word: TAES
 valid word: TAT
 valid word: TATS
-starting from letter:  E
+(1,0) - starting from letter:  E
 valid word: ERS
 valid word: ERST
 valid word: EAT
 valid word: EAT
 valid word: EATS
 valid word: EST
-starting from letter:  P
+(1,1) - starting from letter:  P
 valid word: PST
 valid word: PAT
 valid word: PAC
@@ -85,7 +85,7 @@ valid word: PAS
 valid word: PASE
 valid word: PAST
 valid word: PASTA
-starting from letter:  T
+(1,2) - starting from letter:  T
 valid word: TAS
 valid word: TASE
 valid word: TASER
@@ -109,7 +109,7 @@ valid word: TACE
 valid word: TACES
 valid word: TAE
 valid word: TAES
-starting from letter:  R
+(2,0) - starting from letter:  R
 valid word: REC
 valid word: RECAP
 valid word: RECAPS
@@ -123,7 +123,7 @@ valid word: REATAS
 valid word: RES
 valid word: RESAT
 valid word: REST
-starting from letter:  S
+(2,1) - starting from letter:  S
 valid word: SPA
 valid word: SPAT
 valid word: SPACE
@@ -151,7 +151,7 @@ valid word: SEAT
 valid word: STAP
 valid word: STAP
 valid word: STAT
-starting from letter:  A
+(2,2) - starting from letter:  A
 valid word: ATT
 valid word: ATTAP
 valid word: ATTAPS
