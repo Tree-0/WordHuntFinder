@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word-Game Solver</title>
+</head>
+<body>
+    <h1>Word-Game Solver</h1>
+
+    <!-- Forms to trigger POST requests -->
+    <form action="/wordhunt" method="post">
+        <label for="wordhunt_letters">Word Hunt Letters:</label>
+        <input type="text" id="wordhunt_letters" name="letters">
+        <button type="submit">Submit Word Hunt Letters</button>
+    </form>
+
+    <form action="/anagrams" method="post">
+        <label for="anagram_letters">Anagram Letters:</label>
+        <input type="text" id="anagram_letters" name="letters">
+        <button type="submit">Submit Anagram Letters</button>
+    </form>
+</body>
+</html>

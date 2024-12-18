@@ -103,6 +103,10 @@ def test_word_hunt_large_board():
     assert len(found_words) > 0
     print(f'{len(found_words)} words found.')
 
+    sorted_words = sorted(list(found_words), key=lambda x: len(x), reverse=True)
+
+    print(f'10 longest words: {sorted_words[:10]}')
+
 def test_anagrams_small():
     small_solver = Solver('seats', 'anagrams', 5)
     
