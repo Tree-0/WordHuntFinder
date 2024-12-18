@@ -1,6 +1,7 @@
 import sys
 import os
 from collections import Counter
+import math
 
 # Add the parent directory of Solver and Trie to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -8,33 +9,36 @@ from Trie.trie import Trie
 
 class Solver:
 
-    def __init__(self, letters:str, mode:str, board_size:int):
+    def __init__(self, letters:str, mode:str):
         self.board = None
-        self.board_size = board_size
+        self.board_size = 0
         self.letters = letters.upper()
         self.mode = mode
 
         if mode == 'wordhunt':
-            # square matrix
-            self.board = [['']*board_size for i in range(board_size)] 
-            if not len(self.letters) == board_size ** 2:
+            # check for square matrix
+            board_dim = math.sqrt(len(self.letters))
+            if board_dim - int(board_dim) != 0:
                 raise ValueError('invalid amount of letters given. Must fill square board exactly.')
             
+            self.board_size = int(board_dim)
+
+            self.board = [['']*self.board_size for i in range(self.board_size)] 
+                
             row = 0
             col = 0
             # fill out board with given letters
             for l in self.letters:
                 self.board[row][col] = l
                 col += 1
-                if col == board_size: # wrap to next row
+                if col == self.board_size: # wrap to next row
                     row += 1
                     col = 0  
 
         elif mode == 'anagrams':
             # don't need board, just letters
             self.board = None
-            if not len(self.letters) == board_size:
-                raise ValueError('invalid amount of letters given. Must match board size.')
+            self.board_size == len(letters)
             
         else:
             raise ValueError('mode must be \'anagrams\' or \'wordhunt\'.')

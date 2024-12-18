@@ -22,9 +22,9 @@ def wordhunt_post():
     if not letters:
         return f"No letters provided", 400
     
-    solver = Solver(letters, 'wordhunt', 4)
+    solver = Solver(letters, 'wordhunt')
     found_words = solver.solve_word_hunt(valid_words)
-    return list(found_words)
+    return sorted(list(found_words), key=lambda x: len(x), reverse=True)
 
 @app.post("/anagrams")
 def anagrams_post():
@@ -32,9 +32,9 @@ def anagrams_post():
     if not letters:
         return f"No letters provided", 400
 
-    solver = Solver(letters, 'anagrams', 7)
+    solver = Solver(letters, 'anagrams')
     found_words = solver.solve_anagrams(valid_words)
-    return list(found_words)
+    return sorted(list(found_words), key=lambda x: len(x), reverse=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
