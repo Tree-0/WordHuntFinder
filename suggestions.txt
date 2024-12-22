@@ -1,0 +1,5 @@
+One suggestion that I had for this would be to log where each letter in the solved words comes from, this adds some additional overhead in regards to size but should not affect speed. 
+
+Then when you send the solutions you can have the data of how the word can be spelled given the grid and then make some visual representation of the word over the grid in the frontend. I was thinking of something like on hover of each word you can see the path that the user would need to input to create the word on the given grid.
+
+Also I dont know how scoring goes but you could implement it within this game so you could display stuff like max points possible or something in regards to best word that can be created.
