@@ -12,9 +12,9 @@ from Trie.trie import Trie
 app = Flask(__name__.split('.')[0])
 CORS(app)
 
-with open('../trie_data.pickle', 'r') as file:
+with open('../../trie_data.pickle', 'r') as file:
     valid_words = Trie()
-    valid_words.deserialize_from_file('../trie_data.pickle', format='pickle')
+    valid_words.deserialize_from_file('../../trie_data.pickle', format='pickle')
 
 @app.route("/")
 def home():
@@ -23,7 +23,8 @@ def home():
 @app.post("/wordhunt")
 def wordhunt_post():
     data = request.get_json()
-    letters = data.get('letters')
+    letters = data['letters']
+
     if not letters:
         return f"No letters provided", 400
     
@@ -33,7 +34,9 @@ def wordhunt_post():
 
 @app.post("/anagrams")
 def anagrams_post():
-    letters = request.form.get('letters')
+    data = request.get_json()
+    letters = data['letters']
+
     if not letters:
         return f"No letters provided", 400
 

@@ -72,7 +72,7 @@ const WordHunt: React.FC = () => {
       {
         results.length > 0 && (
           <div className="mt-6 w-full max-w-md">
-            <h2 className="text-2xl font-bold mb-2">Found Words:</h2>
+            <h2 className="text-2xl font-bold mb-2">{results.length} Found Words:</h2>
             <ul className="bg-white p-4 shadow-md rounded-md">
               {results.slice(currentItem, currentItem + MAX_ITEM_DISPLAY).map((word, index) => (
                 <li key={index} className="border-b last:border-none py-2">
