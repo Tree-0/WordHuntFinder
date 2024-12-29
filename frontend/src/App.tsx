@@ -1,7 +1,9 @@
 // App.tsx
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import WordHunt from "./pages/WordHunt"
+import WordHunt from "./pages/WordHunt";
+import Anagrams from "./pages/Anagrams";
+import { NavbarSimple as Navbar } from './components/navbar-simple';
 
 const theme = createTheme({
   colorSchemes: {
@@ -11,11 +13,18 @@ const theme = createTheme({
 
 function App() {
   return (
+    <div>
+
     <ThemeProvider theme={theme}>
-      <Routes>
-        <Route path="/" element={<WordHunt />} />
-      </Routes>
+        <Navbar/>
+        <Routes>
+          <Route path="/wordhunt" element={<WordHunt />} />
+          <Route path="/anagrams" element={<Anagrams />} />
+        </Routes>
+      
     </ThemeProvider>
+    </div>
+    
   );
 }
 

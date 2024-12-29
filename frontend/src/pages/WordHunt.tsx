@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import { handleClearBoard, handleGridSizeChange, generateBoard, handleInputChange, handleSubmit } from '../util/helpers';
+import { handleClearBoard, handleGridSizeChange, generateBoard, handleInputChange, handleSubmit } from '../util/helpers_wordhunt';
 
 const WordHunt: React.FC = () => {
   const [gridSize, setGridSize] = useState<number>(3); // Default to 3x3

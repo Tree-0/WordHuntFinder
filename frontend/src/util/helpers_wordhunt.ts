@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { fetchSolutions } from "./data";
+import { fetchWordHuntSolutions } from "./data";
 
 // Convert 2D array to a single string
 export const generateBoardString = (board: string[][]): string => {
@@ -65,7 +65,7 @@ export const handleSubmit = async (event: React.FormEvent, gridSize: number, boa
   setResults([]);
 
   // Fetch solutions
-  const solutions = await fetchSolutions(letters);
+  const solutions = await fetchWordHuntSolutions(letters);
 
   if (solutions.length === 0) {
     setError('No words found.');
