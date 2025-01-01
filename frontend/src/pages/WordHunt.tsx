@@ -13,7 +13,6 @@ const WordHunt: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
-      <h1 className="text-4xl font-bold text-blue-600 mb-4">Wordhunt Solver</h1>
 
       {/* Grid Size Selector */}
       <div className="mb-6 flex gap-4">
@@ -48,6 +47,7 @@ const WordHunt: React.FC = () => {
             row.map((cell, j) => (
               <input
                 key={`${i}-${j}`}
+                id={`input-cell-${i}-${j}`}
                 type="text"
                 value={cell}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange(i, j, e.target.value, board, setBoard)}

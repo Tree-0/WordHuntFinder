@@ -49,6 +49,23 @@ export const handleInputChange = (row: number, col: number, value: string, board
     r.map((cell, j) => (i === row && j === col ? value.toUpperCase() : cell))
   );
   setBoard(newBoard);
+
+  // focus next cell
+
+  let nextCol = col + 1;
+  let nextRow = nextCol < board.length ? row : row + 1;
+
+  nextCol %= board.length;
+  nextRow %= board[0].length; 
+
+  //console.log(nextRow)
+  //console.log(nextCol)
+
+  const cell = document.getElementById(`input-cell-${nextRow}-${nextCol}`);
+  //console.log(cell)
+  
+  cell?.focus();
+
 }
 
 // Call the API to fetch solutions

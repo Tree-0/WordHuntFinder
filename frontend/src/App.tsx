@@ -14,10 +14,16 @@ const theme = createTheme({
 function App() {
   return (
     <div>
-
+      
     <ThemeProvider theme={theme}>
+        <h1 className="text-4xl font-bold text-blue-600 mb-4" style={{
+          textAlign: 'center',
+        }}>
+          Word Game Solver</h1>
         <Navbar/>
+          
         <Routes>
+          <Route path="/"/>
           <Route path="/wordhunt" element={<WordHunt />} />
           <Route path="/anagrams" element={<Anagrams />} />
         </Routes>

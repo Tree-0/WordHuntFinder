@@ -40,6 +40,13 @@ export const handleInputChange = (col: number, value: string, board: string[], s
     const newBoard = board.map((v,i) => (i === col ? value.toUpperCase() : v));
 
     setBoard(newBoard);
+
+    // focus the next cell
+
+    const nextCol = (col + 1) % board.length;
+    const cell = document.getElementById(`input-cell-${nextCol}`);
+    cell?.focus();
+    
 }
 
 // Call API to get anagrams solutions

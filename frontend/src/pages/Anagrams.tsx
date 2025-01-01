@@ -12,8 +12,6 @@ const Anagrams: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
-
-            <h1 className="text-4xl font-bold text-blue-600 mb-4">Wordhunt Solver</h1>
     
             {/* Grid Size Selector */}
             <div className="mb-6 flex gap-4">
@@ -46,6 +44,7 @@ const Anagrams: React.FC = () => {
                     {letters.map((v, i) =>
                         <input
                         key={`${i}`}
+                        id={`input-cell-${i}`}
                         type="text"
                         value={v}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange(i, e.target.value, letters, setLetters)}
