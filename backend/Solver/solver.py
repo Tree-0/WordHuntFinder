@@ -2,6 +2,8 @@ import sys
 import os
 from collections import Counter
 import math
+from copy import copy
+from collections import namedtuple
 
 # Add the parent directory of Solver and Trie to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -53,9 +55,16 @@ class Solver:
         assert self.mode == 'wordhunt'
 
         visited = set() # the letters used so far in a word
-        found_words = set() # valid words found in board
+
+        # valid words found in board along with their coordinates
+        # {word: string, rows: int[], cols: int[]}
+        found_word_data = set()
+
+        curr_rows, curr_cols = [], [] # keep track of rows and columns of letters
         
-        def find_words(x,y, curr_word, depth):
+        WordData = namedtuple('WordData', ['word', 'rows', 'cols']) # tuples to be stored in set of found words
+
+        def find_words(x, y, curr_word, depth):
             if x < 0 or y < 0 or x >= len(self.board) or y >= len(self.board[0]):
                 return # out of bounds
             if (x,y) in visited: 
@@ -70,13 +79,17 @@ class Solver:
             
             # use new tile
             curr_word += self.board[x][y]
+            nonlocal curr_rows, curr_cols
+            curr_rows.append(x)
+            curr_cols.append(y)
+            
             visited.add((x,y))
 
             #print('string: ', curr_word, 'depth: ', depth)
             if depth >= 3 and valid_words.contains_word(curr_word):
-                #print('checking string', curr_word)
-                print('valid word:', curr_word)
-                found_words.add(curr_word)
+                # add word and locations of its letters to found
+                print(curr_word)
+                found_word_data.add(WordData(curr_word, tuple(curr_rows), tuple(curr_cols)))
     
             find_words(x+1,y, curr_word, depth+1) # down
             find_words(x-1,y, curr_word, depth+1) # up
@@ -88,16 +101,20 @@ class Solver:
             find_words(x-1,y+1, curr_word, depth+1) # up-right
             find_words(x+1,y+1, curr_word, depth+1) # down-right
 
-            visited.remove((x,y)) # don't want this word to interfere with other recursion
+            # don't want this word to interfere with other recursion
+            visited.remove((x,y)) 
+            curr_rows.pop()
+            curr_cols.pop()
+
 
         # permute through every letter in the board
         for i in range(len(self.board)):
             for j in range(len(self.board[0])):
                 visited.clear()
-                print(f'({i},{j}) - starting from letter: ', self.board[i][j])
-                find_words(i,j,'',depth=1)
+                #print(f'({i},{j}) - starting from letter: ', self.board[i][j])
+                find_words(i, j, '', depth=1)
         
-        return found_words
+        return found_word_data
 
     def solve_anagrams(self, valid_words:Trie) -> set:
         ''' 

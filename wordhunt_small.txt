@@ -1,173 +1,164 @@
-(0,0) - starting from letter:  C
-valid word: CEP
-valid word: CEPS
-valid word: CESTA
-valid word: CESTA
-valid word: CAP
-valid word: CAPS
-valid word: CAPE
-valid word: CAPER
-valid word: CAPERS
-valid word: CAPES
-valid word: CAPA
-valid word: CAPAS
-valid word: CAT
-valid word: CAT
-valid word: CATS
-(0,1) - starting from letter:  A
-valid word: APSE
-valid word: APT
-valid word: APTS
-valid word: APE
-valid word: APER
-valid word: APERS
-valid word: APES
-valid word: APRES
-valid word: APT
-valid word: ATT
-valid word: ATTAP
-valid word: ATTAPS
-valid word: ACE
-valid word: ACER
-valid word: ACERS
-valid word: ACES
-valid word: ATAP
-valid word: ATAPS
-valid word: ATT
-valid word: ATS
-(0,2) - starting from letter:  T
-valid word: TAP
-valid word: TAPS
-valid word: TAPE
-valid word: TAPER
-valid word: TAPERS
-valid word: TAPES
-valid word: TAPA
-valid word: TAPAS
-valid word: TACE
-valid word: TACES
-valid word: TAE
-valid word: TAES
-valid word: TAT
-valid word: TATS
-(1,0) - starting from letter:  E
-valid word: ERS
-valid word: ERST
-valid word: EAT
-valid word: EAT
-valid word: EATS
-valid word: EST
-(1,1) - starting from letter:  P
-valid word: PST
-valid word: PAT
-valid word: PAC
-valid word: PACE
-valid word: PACER
-valid word: PACERS
-valid word: PACES
-valid word: PAT
-valid word: PATS
-valid word: PER
-valid word: PERST
-valid word: PEC
-valid word: PEA
-valid word: PEAT
-valid word: PEAT
-valid word: PEATS
-valid word: PES
-valid word: PEST
-valid word: PRE
-valid word: PRESA
-valid word: PREST
-valid word: PAT
-valid word: PATS
-valid word: PAS
-valid word: PASE
-valid word: PAST
-valid word: PASTA
-(1,2) - starting from letter:  T
-valid word: TAS
-valid word: TASE
-valid word: TASER
-valid word: TAP
-valid word: TAPS
-valid word: TAPA
-valid word: TAPE
-valid word: TAPER
-valid word: TAPERS
-valid word: TAPES
-valid word: TAP
-valid word: TAPS
-valid word: TAPE
-valid word: TAPER
-valid word: TAPERS
-valid word: TAPES
-valid word: TAPA
-valid word: TAPAS
-valid word: TAT
-valid word: TACE
-valid word: TACES
-valid word: TAE
-valid word: TAES
-(2,0) - starting from letter:  R
-valid word: REC
-valid word: RECAP
-valid word: RECAPS
-valid word: REP
-valid word: REPS
-valid word: REPAST
-valid word: REAP
-valid word: REAPS
-valid word: REATA
-valid word: REATAS
-valid word: RES
-valid word: RESAT
-valid word: REST
-(2,1) - starting from letter:  S
-valid word: SPA
-valid word: SPAT
-valid word: SPACE
-valid word: SPACER
-valid word: SPAE
-valid word: SPAER
-valid word: SPAT
-valid word: SPEC
-valid word: SPEAT
-valid word: SPEAT
-valid word: SPA
-valid word: SPAT
-valid word: SAT
-valid word: SAP
-valid word: SER
-valid word: SEC
-valid word: SEPT
-valid word: SEPTA
-valid word: SEPTA
-valid word: SEPT
-valid word: SEPTA
-valid word: SEA
-valid word: SEAT
-valid word: SEAT
-valid word: STAP
-valid word: STAP
-valid word: STAT
-(2,2) - starting from letter:  A
-valid word: ATT
-valid word: ATTAP
-valid word: ATTAPS
-valid word: ATAP
-valid word: ATAPS
-valid word: ATS
-valid word: ASP
-valid word: ASPER
-valid word: ASEA
-valid word: APSE
-valid word: APACE
-valid word: APT
-valid word: APTS
-valid word: APE
-valid word: APER
-valid word: APERS
-valid word: APES
-valid word: APRES
-valid word: APT
+CEP
+CEPS
+CESTA
+CESTA
+CAP
+CAPS
+CAPE
+CAPER
+CAPERS
+CAPES
+CAPA
+CAPAS
+CAT
+CAT
+CATS
+APSE
+APT
+APTS
+APE
+APER
+APERS
+APES
+APRES
+APT
+ATT
+ATTAP
+ATTAPS
+ACE
+ACER
+ACERS
+ACES
+ATAP
+ATAPS
+ATT
+ATS
+TAP
+TAPS
+TAPE
+TAPER
+TAPERS
+TAPES
+TAPA
+TAPAS
+TACE
+TACES
+TAE
+TAES
+TAT
+TATS
+ERS
+ERST
+EAT
+EAT
+EATS
+EST
+PST
+PAT
+PAC
+PACE
+PACER
+PACERS
+PACES
+PAT
+PATS
+PER
+PERST
+PEC
+PEA
+PEAT
+PEAT
+PEATS
+PES
+PEST
+PRE
+PRESA
+PREST
+PAT
+PATS
+PAS
+PASE
+PAST
+PASTA
+TAS
+TASE
+TASER
+TAP
+TAPS
+TAPA
+TAPE
+TAPER
+TAPERS
+TAPES
+TAP
+TAPS
+TAPE
+TAPER
+TAPERS
+TAPES
+TAPA
+TAPAS
+TAT
+TACE
+TACES
+TAE
+TAES
+REC
+RECAP
+RECAPS
+REP
+REPS
+REPAST
+REAP
+REAPS
+REATA
+REATAS
+RES
+RESAT
+REST
+SPA
+SPAT
+SPACE
+SPACER
+SPAE
+SPAER
+SPAT
+SPEC
+SPEAT
+SPEAT
+SPA
+SPAT
+SAT
+SAP
+SER
+SEC
+SEPT
+SEPTA
+SEPTA
+SEPT
+SEPTA
+SEA
+SEAT
+SEAT
+STAP
+STAP
+STAT
+ATT
+ATTAP
+ATTAPS
+ATAP
+ATAPS
+ATS
+ASP
+ASPER
+ASEA
+APSE
+APACE
+APT
+APTS
+APE
+APER
+APERS
+APES
+APRES
+APT
