@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import WordHunt from "./pages/WordHunt";
 import Anagrams from "./pages/Anagrams";
-import { NavbarSimple as Navbar } from './components/navbar-simple';
+import { NavbarSimple as Navbar } from './my_components/navbar-simple';
 
 const theme = createTheme({
   colorSchemes: {

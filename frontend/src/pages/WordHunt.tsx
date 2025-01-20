@@ -1,12 +1,17 @@
 import React, { useState, ChangeEvent } from 'react';
 import { handleClearBoard, handleGridSizeChange, generateBoard, handleInputChange, handleSubmit } from '../util/helpers_wordhunt';
+import { WordGridDisplay } from '../my_components/word-grid-display';
+import { WordData } from '../types/WordDataTypes';
 
 const WordHunt: React.FC = () => {
-  const [gridSize, setGridSize] = useState<number>(3); // Default to 3x3
+  const [gridSize, setGridSize] = useState<number>(4); // Default to 3x3
   const [board, setBoard] = useState<string[][]>(generateBoard(gridSize));
-  const [results, setResults] = useState<string[]>([]);
+  const [results, setResults] = useState<WordData[]>([]);
   const [error, setError] = useState<string>('');
   const [currentItem, setCurrentItem] = useState<number>(0);
+
+  // for word grid display
+  const [selectedWordData, setSelectedWordData] = useState<WordData>();
 
   // Number of items to display at a time in the results list
   const MAX_ITEM_DISPLAY = 10;
@@ -67,18 +72,26 @@ const WordHunt: React.FC = () => {
 
       {/* Error Message */}
       {error && <p className="text-red-500 mt-4">{error}</p>}
-
+      
+      {/* Grid Display for selected word */}
+      <div style={{margin: '20px'}}>
+        <WordGridDisplay wordData={selectedWordData} gridSize={gridSize} board={board}/>
+      </div>
+      
       {/* Results */}
       {
         results.length > 0 && (
           <div className="mt-6 w-full max-w-md">
             <h2 className="text-2xl font-bold mb-2">{results.length} Found Words:</h2>
             <ul className="bg-white p-4 shadow-md rounded-md">
-              {results.slice(currentItem, currentItem + MAX_ITEM_DISPLAY).map((word, index) => (
+              {results.slice(currentItem, currentItem + MAX_ITEM_DISPLAY).map((wordData, index) => {
+                return (
                 <li key={index} className="border-b last:border-none py-2">
-                  {word}
+                  <button onClick={() => {setSelectedWordData(wordData); console.log(wordData.word)}}>
+                    {wordData.word}
+                  </button>
                 </li>
-              ))}
+              )})}
             </ul>
             <div className="flex justify-between mt-4">
               <button

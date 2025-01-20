@@ -1,5 +1,5 @@
-import { Link } from './link';
-import { Button } from './button.tsx';
+import { Link } from 'react-router-dom';
+// import { Button } from '../components/button.tsx';
 
 export function NavbarSimple() {
     return (
@@ -10,15 +10,15 @@ export function NavbarSimple() {
             gap: '1rem', // Adjust gap between buttons
             padding: '1rem', // Optional padding for better spacing
         }}>
-            <Link href="/wordhunt">
-                <Button>
+            <Link to="/wordhunt">
+                <button>
                     Wordhunt
-                </Button>
+                </button>
             </Link>
-            <Link href="/anagrams">
-                <Button>
+            <Link to="/anagrams">
+                <button>
                     Anagrams
-                </Button>
+                </button>
             </Link>
         </div>
     );

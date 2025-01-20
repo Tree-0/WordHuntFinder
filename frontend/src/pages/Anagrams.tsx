@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent } from 'react';
 import {generateBoard, handleClearBoard, handleGridSizeChange, handleInputChange, handleSubmit } from '../util/helpers_anagrams';
 
 const Anagrams: React.FC = () => {
-    const [stringSize, setStringSize] = useState<number>(3);
+    const [stringSize, setStringSize] = useState<number>(6);
     const [letters, setLetters] = useState<string[]>(generateBoard(stringSize));
     const [results, setResults] = useState<string[]>([]);
     const [error, setError] = useState<string>('');

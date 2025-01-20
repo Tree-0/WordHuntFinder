@@ -57,8 +57,9 @@ class Solver:
         visited = set() # the letters used so far in a word
 
         # valid words found in board along with their coordinates
-        # {word: string, rows: int[], cols: int[]}
-        found_word_data = set()
+        # Key: word -> str
+        # Val: {word -> str, rows -> int[], cols -> int[]} -> WordData
+        found_word_data = {}
 
         curr_rows, curr_cols = [], [] # keep track of rows and columns of letters
         
@@ -89,7 +90,7 @@ class Solver:
             if depth >= 3 and valid_words.contains_word(curr_word):
                 # add word and locations of its letters to found
                 print(curr_word)
-                found_word_data.add(WordData(curr_word, tuple(curr_rows), tuple(curr_cols)))
+                found_word_data[curr_word] = (WordData(curr_word, tuple(curr_rows), tuple(curr_cols)))
     
             find_words(x+1,y, curr_word, depth+1) # down
             find_words(x-1,y, curr_word, depth+1) # up
@@ -114,7 +115,8 @@ class Solver:
                 #print(f'({i},{j}) - starting from letter: ', self.board[i][j])
                 find_words(i, j, '', depth=1)
         
-        return found_word_data
+        # words are unique due to the dictionary key, cast values back into a set and return that data
+        return set(found_word_data.values()) 
 
     def solve_anagrams(self, valid_words:Trie) -> set:
         ''' 

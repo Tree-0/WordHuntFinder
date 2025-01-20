@@ -1,8 +1,10 @@
+import { WordData } from '../types/WordDataTypes';
+
 // In the future if you host the backend change the API_URL to the hosted URL.
 const API_URL = 'http://127.0.0.1:5000';
 
 // Call the API to fetch solutions
-export const fetchWordHuntSolutions = async (letters: string): Promise<string[]> => {
+export const fetchWordHuntSolutions = async (letters: string): Promise<WordData[]> => {
   try {
     // Right now requires Flask backend to be running
     const response = await fetch(`${API_URL}/wordhunt`, {
@@ -17,9 +19,15 @@ export const fetchWordHuntSolutions = async (letters: string): Promise<string[]>
       throw new Error(`Error: ${response.statusText}`);
     }
 
-    return await response.json();
+    const wordData: WordData[] = await response.json();
+    
+    return wordData;
+
   } catch (err: unknown) {
-    return err instanceof Error ? [err.message] : ['Error: An unknown error occurred'];
+    if (err instanceof Error)
+      console.error(err.message);
+    console.error('Error: An unknown error occurred', err);
+    return [];
   }
 }
 

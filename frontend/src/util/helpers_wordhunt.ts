@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import { fetchWordHuntSolutions } from "./data";
+import { WordData } from "../types/WordDataTypes";
 
 // Convert 2D array to a single string
 export const generateBoardString = (board: string[][]): string => {
@@ -69,7 +70,7 @@ export const handleInputChange = (row: number, col: number, value: string, board
 }
 
 // Call the API to fetch solutions
-export const handleSubmit = async (event: React.FormEvent, gridSize: number, board: string[][], setResults: Dispatch<SetStateAction<string[]>>, setError: Dispatch<SetStateAction<string>>, setCurrentItem: Dispatch<SetStateAction<number>>) => {
+export const handleSubmit = async (event: React.FormEvent, gridSize: number, board: string[][], setResults: Dispatch<SetStateAction<WordData[]>>, setError: Dispatch<SetStateAction<string>>, setCurrentItem: Dispatch<SetStateAction<number>>) => {
   event.preventDefault();
   const letters = generateBoardString(board);
 
@@ -84,14 +85,15 @@ export const handleSubmit = async (event: React.FormEvent, gridSize: number, boa
   // Fetch solutions
   const solutions = await fetchWordHuntSolutions(letters);
 
+  
   if (solutions.length === 0) {
     setError('No words found.');
     return;
-  } else if (solutions.length === 1 && solutions[0].startsWith('Error:')) {
-    setError(solutions[0]);
+  } else if (solutions.length === 1 && solutions[0].word.startsWith('Error:')) {
+    setError(solutions[0].word); // some other error stored in the first word?
     return;
   } else {
-    setResults(solutions);
+    setResults(solutions); // actual list of wordData containing words and coordinates
     setCurrentItem(0);
   }
 }

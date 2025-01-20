@@ -30,7 +30,15 @@ def wordhunt_post():
     
     solver = Solver(letters, 'wordhunt')
     found_words = solver.solve_word_hunt(valid_words)
-    return sorted(list(found_words), key=lambda x: len(x), reverse=True)
+
+    # trying to use named indices from the tuple but failing :)
+    # found_words is a list of tuples: (word, [rows], [cols])
+    # so x[0] is the word
+    found_words = sorted(list(found_words), key=lambda x: len(x[0]), reverse=True)
+
+    results = [word_data._asdict() for word_data in found_words]
+    return jsonify(results)
+
 
 @app.post("/anagrams")
 def anagrams_post():
